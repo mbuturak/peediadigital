@@ -36,13 +36,13 @@
                             <tr>
                                 <td><?php echo $count ?></td>
                                 <td><?php if ($servicesItem->icon != null) { ?>
-                                        <img width="80px" src="<?php echo base_url('assets/uploads/services/icon/' . $servicesItem->icon); ?>">
+                                        <img width="80px" src="<?php echo base_url('assets/uploads/services/' . $servicesItem->icon); ?>">
                                     <?php } else { ?>
                                         <img width="80px" src="<?php echo base_url('assets/uploads/no-photo.png'); ?>">
                                     <?php } ?>
                                 </td>
                                 <td><?php if ($servicesItem->image != null) { ?>
-                                        <img width="80px" src="<?php echo base_url('assets/uploads/services/image/' . $servicesItem->image); ?>">
+                                        <img width="80px" src="<?php echo base_url('assets/uploads/services/' . $servicesItem->image); ?>">
                                     <?php } else { ?>
                                         <img width="80px" src="<?php echo base_url('assets/uploads/no-photo.png'); ?>">
                                     <?php } ?>

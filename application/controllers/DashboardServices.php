@@ -71,7 +71,7 @@ class DashboardServices extends CI_Controller
 
 			if ($_FILES['icon']['name'] != "") {
 				// Set preference
-				$config['upload_path'] = 'assets/uploads/services/icon/';
+				$config['upload_path'] = 'assets/uploads/' . $this->folderName . '/';
 				$config['allowed_types'] = 'jpg|jpeg|png';
 				$config['file_name'] = $_FILES['icon']['name'];
 				$config['encrypt_name'] = TRUE;
@@ -90,7 +90,7 @@ class DashboardServices extends CI_Controller
 
 			if ($_FILES['image']['name'] != "") {
 				// Set preference
-				$config['upload_path'] = 'assets/uploads/services/image/';
+				$config['upload_path'] = 'assets/uploads/' . $this->folderName . '/';
 				$config['allowed_types'] = 'jpg|jpeg|png';
 				$config['file_name'] = $_FILES['image']['name'];
 				$config['encrypt_name'] = TRUE;
