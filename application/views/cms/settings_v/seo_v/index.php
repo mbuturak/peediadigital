@@ -2,7 +2,8 @@
 <html lang="en">
 
 <!-- Head -->
-<?php $this->load->view($mainFolder.'/shared/head'); ?>
+<?php $this->load->view($mainFolder . '/shared/head'); ?>
+
 <body>
     <div id="app">
 
@@ -12,7 +13,7 @@
         <div id="main">
 
             <!-- Content -->
-            <?php $this->load->view($mainFolder . '/' . $viewFolder . '/add/content') ?>
+            <?php $this->load->view($mainFolder . '/' . $viewFolder . '/' . $folderName . '/content') ?>
 
         </div>
 

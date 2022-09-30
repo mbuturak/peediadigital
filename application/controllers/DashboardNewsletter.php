@@ -22,10 +22,10 @@ class DashboardNewsletter extends CI_Controller
 	public function index()
 	{
 
-		// if (!getActiveUser()) {
-		// 	redirect(base_url('login'));
-		// 	die();
-		// }
+		if (!getActiveUser()) {
+		 	redirect(base_url('cms/login'));
+		 	die();
+		 }
 
 		$viewData = new stdClass();
 		$viewData->mainFolder = $this->mainFolder;

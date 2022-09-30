@@ -13,7 +13,7 @@ function getActiveUser()
 {
     $t = &get_instance();
 
-    $user = $t->session->userdata("dealer");
+    $user = $t->session->userdata("user");
 
     if ($user)
         return $user;
@@ -31,7 +31,7 @@ function convertisActiveWithBadge($isActive)
             return "<span class='badge bg-success'>Aktif</span>";
             break;
         case 2:
-            return "<span class='badge bg-warning'>Onay Bekliyor</span>";
+            return "<span class='badge bg-warning'>Bekliyor</span>";
             break;
     }
 }
