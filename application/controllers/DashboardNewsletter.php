@@ -23,9 +23,9 @@ class DashboardNewsletter extends CI_Controller
 	{
 
 		if (!getActiveUser()) {
-		 	redirect(base_url('cms/login'));
-		 	die();
-		 }
+			redirect(base_url('cms/login'));
+			die();
+		}
 
 		$viewData = new stdClass();
 		$viewData->mainFolder = $this->mainFolder;
@@ -33,6 +33,50 @@ class DashboardNewsletter extends CI_Controller
 		$viewData->item = $this->newsletter_model->get_all();
 
 		$this->load->view("{$this->mainFolder}/{$viewData->viewFolder}/list/index", $viewData);
+	}
+
+	public function add()
+	{
+		$this->load->library("form_validation");
+
+		$this->form_validation->set_rules("email", "Email", "required|trim|valid_email|xss_clean");
+
+		$this->form_validation->set_message(array(
+			"required" => "{field} alanı doldurulmadı."
+		));
+
+		$validate = $this->form_validation->run();
+
+		if ($validate) {
+
+			$add = $this->user_model->add(
+				array(
+					"email" => htmlspecialchars($this->input->post("email")),
+					"isActive" => 1
+				)
+			);
+
+			if ($add) {
+				$alert = array(
+					"text" => "Ekleme başarılı ",
+					"type" => "success"
+				);
+			} else {
+				$alert = array(
+					"text" => "Bilgiler güncellenemedi.",
+					"type" => "error"
+				);
+			}
+		} else {
+			//Validasyon hatalı..
+			$alert = array(
+				"text" => "Lütfen eksiksiz ve doğru bir biçimde giriş yapınız.. ",
+				"type" => "error"
+			);
+		}
+
+		$this->session->set_flashdata("alert", $alert);
+		redirect(base_url());
 	}
 
 	public function delete($id)

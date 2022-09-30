@@ -35,3 +35,16 @@ function convertisActiveWithBadge($isActive)
             break;
     }
 }
+
+
+// Functions
+
+function getSocialLinks()
+{
+    $ci = &get_instance();
+    $ci->load->database();
+    $sql = "select * from tbl_social";
+    $query = $ci->db->query($sql);
+    return $query->result();
+}
+

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$route['default_controller'] = 'DashboardMain';
+$route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -52,3 +52,7 @@ $route['cms/edit-user/(:any)'] =  'DashboardUser/updateForm/$1';
 $route['cms/remove-user/(:any)'] =  'DashboardUser/delete/$1';
 $route['cms/login'] =  'DashboardUser/loginForm';
 $route['cms/logout'] =  'DashboardUser/logout';
+
+
+//Web
+$route['subscribe'] =  'DashboardNewsletter/logout';
