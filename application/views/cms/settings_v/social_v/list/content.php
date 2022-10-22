@@ -24,7 +24,6 @@
                             <th width="3%">#</th>
                             <th width="8%">Başlık</th>
                             <th width="15%">Url</th>
-                            <th width="5%">Durum</th>
                             <th width="5%"></th>
                         </tr>
                     </thead>
@@ -36,8 +35,6 @@
                                 <td><?php echo $count ?></td>
                                 <td><?php echo $social->title ?></td>
                                 <td><a href="<?php echo $social->url ?>" target="_blank"><?php echo substr($social->url, 0, 50) . '..' ?></a></td>
-                                <td><?php $isAcitve = convertisActiveWithBadge($social->isActive);
-                                    echo $isAcitve ?></td>
                                 <td>
                                     <a href="<?php echo base_url('cms/edit-social/' . $social->Id) ?>" class="btn btn-primary btn-sm text-center m-auto">
                                         <i class="bi bi-pencil"></i>
